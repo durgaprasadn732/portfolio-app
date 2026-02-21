@@ -14,7 +14,7 @@ export default function Navbar() {
 
   return (
     <nav className={scrolled ? "scrolled" : ""}>
-      <div className="nav-logo">YN.</div>
+      <div className="nav-logo">DP.</div>
       <div className="nav-links">
         {NAV_LINKS.map((link) => (
           <a key={link} href={`#${link.toLowerCase()}`}>
