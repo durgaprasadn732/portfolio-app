@@ -57,7 +57,7 @@ export default function Contact() {
             <div className="contact-links">
               {contactLinks.map((item) => (
                 // eslint-disable-next-line jsx-a11y/anchor-is-valid
-                <a key={item.sub} href={item.href || "#"} className="contact-link">
+                <a key={item.sub} href={item.href || "#"} target="_blank" rel="noreferrer" className="contact-link">
                   <div className="contact-link-icon">{item.icon}</div>
                   <div>
                     <div className="contact-link-text">{item.label}</div>
