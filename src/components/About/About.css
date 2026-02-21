@@ -1,0 +1,151 @@
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+/* Visual card with bob */
+.about-visual {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  max-height: 500px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  animation: bob 6s ease-in-out infinite;
+  transition: box-shadow 0.4s;
+}
+.about-visual:hover {
+  box-shadow: 0 20px 60px rgba(201,168,76,0.1);
+}
+.about-visual::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, var(--gold) 0%, transparent 60%);
+  opacity: 0.08;
+  transition: opacity 0.4s;
+}
+.about-visual:hover::before { opacity: 0.14; }
+
+/* Spinning decorative ring behind card */
+.about-visual::after {
+  content: '';
+  position: absolute;
+  top: -30px; left: -30px;
+  right: -30px; bottom: -30px;
+  border: 1px dashed rgba(201,168,76,0.08);
+  border-radius: 4px;
+  animation: spinSlow 20s linear infinite;
+  pointer-events: none;
+}
+
+.about-visual-inner {
+  position: absolute; inset: 20px;
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 8px;
+  transition: border-color 0.4s;
+}
+.about-visual:hover .about-visual-inner { border-color: rgba(201,168,76,0.3); }
+
+.about-avatar {
+  font-family: 'Playfair Display', serif;
+  font-size: 80px;
+  font-weight: 900;
+  color: var(--gold);
+  opacity: 0.3;
+  line-height: 1;
+  transition: opacity 0.4s, transform 0.4s;
+}
+.about-visual:hover .about-avatar { opacity: 0.5; transform: scale(1.05); }
+
+.about-visual-tag {
+  position: absolute;
+  bottom: 30px; left: 30px;
+  background: var(--gold);
+  color: var(--bg);
+  padding: 8px 16px;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: background 0.3s;
+}
+.about-visual:hover .about-visual-tag { background: var(--gold2); }
+
+.about-corner {
+  position: absolute;
+  top: 0; right: 0;
+  width: 60px; height: 60px;
+  border-bottom: 1px solid var(--border);
+  border-left:   1px solid var(--border);
+  transition: border-color 0.4s, width 0.4s, height 0.4s;
+}
+.about-visual:hover .about-corner {
+  border-color: rgba(201,168,76,0.4);
+  width: 80px; height: 80px;
+}
+
+/* Text */
+.about-text p {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 2;
+  margin-bottom: 24px;
+  transition: color 0.3s;
+}
+.about-text p:hover { color: var(--text); }
+
+/* Stats with animated counter feel */
+.about-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 40px;
+  padding-top: 40px;
+  border-top: 1px solid var(--border);
+}
+
+.about-stat {
+  position: relative;
+  padding: 16px;
+  transition: background 0.3s;
+  cursor: default;
+}
+.about-stat::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 0; height: 1px;
+  background: var(--gold);
+  transition: width 0.4s ease;
+}
+.about-stat:hover::before { width: 100%; }
+.about-stat:hover { background: rgba(201,168,76,0.04); }
+
+.stat-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 48px;
+  font-weight: 900;
+  color: var(--gold);
+  line-height: 1;
+  animation: flicker 10s ease-in-out infinite;
+}
+.about-stat:nth-child(2) .stat-num { animation-delay: 2s; }
+.about-stat:nth-child(3) .stat-num { animation-delay: 4s; }
+
+.stat-label {
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+@media (max-width: 900px) {
+  .about-grid  { grid-template-columns: 1fr; }
+  .about-visual { animation: none; }
+}
