@@ -27,7 +27,7 @@ export default function Projects() {
                 ))}
               </div>
 
-              <a href={project.link} className="project-link">
+              <a href={project.link} className="project-link" target="_blank" rel="noreferrer">
                 View Project <span className="project-arrow">→</span>
               </a>
             </div>
