@@ -99,7 +99,7 @@
 }
 .about-text p:hover { color: var(--text); }
 
-/* Stats with animated counter feel */
+/* Stats */
 .about-stats {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -145,7 +145,32 @@
   margin-top: 4px;
 }
 
+/* ── Tablet ── */
 @media (max-width: 900px) {
-  .about-grid  { grid-template-columns: 1fr; }
+  .about-grid   { grid-template-columns: 1fr; gap: 40px; }
   .about-visual { animation: none; }
+}
+
+/* ── Mobile ── */
+@media (max-width: 600px) {
+  .about-visual {
+    max-height: 280px;
+    aspect-ratio: 4 / 3;
+    animation: none;
+  }
+
+  .about-avatar { font-size: 56px; }
+
+  .about-text p { font-size: 13px; }
+
+  .about-stats {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    padding-top: 24px;
+    margin-top: 24px;
+  }
+
+  .about-stat   { padding: 10px 4px; }
+  .stat-num     { font-size: 30px; }
+  .stat-label   { font-size: 8px; letter-spacing: 1px; }
 }

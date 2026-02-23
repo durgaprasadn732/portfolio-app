@@ -17,12 +17,14 @@
 }
 
 /* ─── Base ───────────────────────────────────────────── */
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: hidden; max-width: 100%; }
 body {
   background: var(--bg);
   color: var(--text);
   font-family: 'DM Mono', monospace;
   overflow-x: hidden;
+  max-width: 100%;
+  width: 100%;
 }
 
 /* ─── Scrollbar ──────────────────────────────────────── */
@@ -219,4 +221,28 @@ section { padding: 120px 60px; }
 /* ─── Responsive ─────────────────────────────────────── */
 @media (max-width: 900px) {
   section { padding: 80px 24px; }
+}
+
+@media (max-width: 600px) {
+  section { padding: 60px 20px; }
+
+  .section-title {
+    font-size: clamp(28px, 8vw, 44px);
+    letter-spacing: -0.5px;
+  }
+  .section-label {
+    font-size: 9px;
+    letter-spacing: 3px;
+  }
+  .section-header { margin-bottom: 40px; }
+  .divider { height: 50px; margin-bottom: 50px; }
+
+  .btn-primary,
+  .btn-outline {
+    padding: 12px 24px;
+    font-size: 10px;
+  }
+
+  /* Hide custom cursor on touch devices */
+  .cursor, .cursor-ring { display: none; }
 }

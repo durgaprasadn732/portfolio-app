@@ -26,6 +26,7 @@ nav.scrolled {
   cursor: pointer;
   transition: transform 0.3s;
   position: relative;
+  flex-shrink: 0;
 }
 .nav-logo:hover {
   transform: scale(1.05);
@@ -49,6 +50,7 @@ nav.scrolled {
   position: relative;
   transition: color 0.3s;
   padding-bottom: 4px;
+  white-space: nowrap;
 }
 
 /* Underline draw animation */
@@ -76,8 +78,22 @@ nav.scrolled {
 }
 .nav-links a:hover::before { transform: translateX(-50%) scale(1); }
 
+/* ── Tablet ── */
 @media (max-width: 900px) {
-  nav        { padding: 20px 24px; }
+  nav          { padding: 20px 24px; }
   nav.scrolled { padding: 14px 24px; }
-  .nav-links { gap: 24px; }
+  .nav-links   { gap: 24px; }
+}
+
+/* ── Mobile ── */
+@media (max-width: 600px) {
+  nav          { padding: 16px 20px; }
+  nav.scrolled { padding: 12px 20px; }
+  .nav-links   { gap: 14px; }
+  .nav-links a {
+    font-size: 9px;
+    letter-spacing: 1.5px;
+  }
+  .nav-links a::before { display: none; }
+  .nav-logo { font-size: 18px; }
 }
