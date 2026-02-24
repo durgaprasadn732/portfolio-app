@@ -35,33 +35,46 @@ export const projects = [
 
 export const skills = [
   {
-    title: "Frontend",
-    sub: "Interfaces & UX",
-    items: [
-      { name: "React / Next.js",  pct: 95 },
-      { name: "TypeScript",       pct: 90 },
-      { name: "CSS / Tailwind",   pct: 92 },
-      { name: "Three.js / WebGL", pct: 72 },
-    ],
-  },
-  {
     title: "Backend",
-    sub: "Systems & APIs",
+    sub: "Server-side & Logic",
     items: [
-      { name: "Node.js",         pct: 88 },
-      { name: "Python / Django", pct: 82 },
-      { name: "Go",              pct: 68 },
-      { name: "GraphQL / REST",  pct: 90 },
+      { name: "Java",            level: "expert"       },
+      { name: "Spring Boot",     level: "expert"       },
+      { name: "Spring Security", level: "intermediate" },
+      { name: "Spring ORM",      level: "intermediate" },
+      { name: "Servlets & JDBC", level: "intermediate" },
+      { name: "MVC Architecture",level: "intermediate"       },
     ],
   },
   {
-    title: "DevOps",
-    sub: "Infrastructure & Cloud",
+    title: "APIs & Database",
+    sub: "Data & Communication",
     items: [
-      { name: "AWS / GCP",          pct: 80 },
-      { name: "Docker / K8s",       pct: 75 },
-      { name: "CI/CD Pipelines",    pct: 85 },
-      { name: "PostgreSQL / Redis", pct: 88 },
+      { name: "REST API Design", level: "expert"       },
+      { name: "JWT Auth",        level: "intermediate" },
+      { name: "MySQL & SQL",     level: "expert"       },
+      { name: "Postman Testing", level: "intermediate" },
+
+    ],
+  },
+  {
+    title: "Frontend",
+    sub: "UI & Client-side",
+    items: [
+      { name: "HTML & CSS",             level: "intermediate" },
+      { name: "React & JSX",            level: "intermediate" },
+      { name: "Responsive UI",          level: "intermediate" },
+
+    ],
+  },
+  {
+    title: "DevOps & Tools",
+    sub: "Deployment & Workflow",
+    items: [
+      { name: "Git & GitHub",   level: "intermediate" },
+      { name: "GitHub Pages",   level: "intermediate" },
+      { name: "Build & Deploy", level: "beginner"     },
+
     ],
   },
 ];
